@@ -1,0 +1,58 @@
+:root {
+  --bg: #0d1117;
+  --boardgame: #3062b6;
+  --red: #882020;
+  --yellow: #d5d217;
+  --text: #7d8c8e;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main h2 {text-align: center;}
+
+.container {
+  display:grid;
+}
+
+.gameboard {
+  background-color: var(--boardgame);
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.void, .full {
+  background-color: var(--bg);
+  width: 66px;
+  height: 66px;
+  border-radius: 100%;
+  display: grid;
+  cursor: pointer;
+  border: 2px solid var(--bg);
+}
+
+.full.red { background-color: var(--red) }
+.full.yellow { background-color: var(--yellow) }
+
+.empty:hover {
+  border: 2px solid var(--text);
+}
+
+@media(max-width: 480px) {
+  .empty {
+      max-width: 2rem;
+      max-height: 2rem;
+  }
+  .gameboard {
+    padding: 5px;
+    gap: 0.2rem;
+  }
+}
