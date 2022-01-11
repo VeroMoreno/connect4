@@ -1,33 +1,27 @@
-/*
-7 x 6 - 42
-Jugador vs Jugador
-*/
-
 let holeColor = 'red';
+let holeControl = new Map();
+
+for (let i = 0; i <= 42; i++) {
+  holeControl.set(i, false)
+}
+// console.log(holeControl);
+
 const gameboard = document.getElementById('gameboard'); // parent
 
 gameboard.addEventListener('click', (e => {
-  const num = e.target.id.split("x");
-  console.log(e)
-  console.log(num[1])
-  if (num[1] && holeColor==='red') {
-    e.target.classList.value = `full ${holeColor}`
-    holeColor = 'yellow';
-  } else {
-    e.target.classList.value = `full ${holeColor}`
-    holeColor = 'red';
-  }
+  const holeNum = e.target.id;
+  // console.log(holeNum)
+
+  // holeControl.forEach((value, key) => {
+    // console.log(`${key}: ${value}`);
+    if (!e.target.classList.contains('red') && !e.target.classList.contains('yellow')) {
+      if (holeNum && holeColor==='red') {
+        e.target.classList.value = `full ${holeColor} not-active`
+        holeColor = 'yellow';
+      } else {
+        e.target.classList.value = `full ${holeColor} not-active`
+        holeColor = 'red';
+      }
+    }
+  // });
 }))
-
-/*let fillGame = new Array()
-for (i=1; i <= 42; i++) {
-  fillGame.push({i : false})
-}
-console.log(fillGame)*/
-
-let map = new Map();
-
-for (let i = 0; i <= 42; i++) {
-  map.set(i, false)
-}
-console.log(map);

@@ -10,7 +10,14 @@ Open with live server
 
 ### Technologies / Built With
 - ✨ JavaScript
-- 💣 CSS
+- 🍑 HTML
+- 💅🏽 CSS
 
 ### Features
-- 7 x 6 gameboard
+- 7 x 6 gameboard, 42 holes.
+- Red piece start first, inmmediately later, yellow piece.
+- That when clicking on a filled hole it is not modified.
+
+### Next Steps
+- Let the tiles fill in the holes by columns
+
