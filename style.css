@@ -3,6 +3,7 @@
   --boardgame: #3062b6;
   --red: #882020;
   --yellow: #d5d217;
+  --white: #fff;
   --text: #7d8c8e;
 }
 
@@ -46,17 +47,46 @@ main h2 {text-align: center;}
   cursor: no-drop;
 }
 
-.empty:hover {
+.void:hover, .full:hover {
   border: 2px solid var(--text);
 }
 
+button {
+  background-color: #4e80d3;
+  border: none;
+  color: var(--white);
+  letter-spacing: 11px;
+  padding: 10px 0;
+  margin: 0 auto;
+  width: 650px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--text);
+}
+
+.players {
+  display: flex;
+  justify-content: center;
+}
+
+.players p {
+  padding: 10px;
+  margin: 0 10px;
+}
+
 @media(max-width: 480px) {
-  .empty {
+  .void, .full {
       max-width: 2rem;
       max-height: 2rem;
   }
   #gameboard {
     padding: 5px;
     gap: 0.2rem;
+  }
+  button {
+    max-width: 18rem;
   }
 }
